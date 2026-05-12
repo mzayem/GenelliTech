@@ -1,0 +1,1614 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Genelli Tech — Elite IT Support & Digital Infrastructure</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <!-- CURSOR -->
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+    <!-- SCROLL PROGRESS -->
+    <div id="progress-bar"></div>
+
+    <!-- LOADER -->
+    <div id="loader">
+      <div class="loader-word"><span>GENELLI TECH</span></div>
+      <div class="loader-line">
+        <div class="loader-line-fill" id="loader-fill"></div>
+      </div>
+      <div class="loader-count" id="loader-count">0%</div>
+    </div>
+
+    <!-- HEADER -->
+    <header id="site-header" style="opacity: 0">
+      <a href="#hero" class="nav-logo">
+        <img
+          src="assets/images/logo.png"
+          alt="Techstersol"
+          onerror="
+            this.style.display = 'none';
+            this.nextElementSibling.style.display = 'block';
+          "
+        />
+        <span class="logo-fallback">TECHSTERSOL</span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="#hero" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 14px">
+        <div class="nav-cta">
+          <a href="#contact"
+            >Get in Touch
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+              <path
+                d="M2 7h10M8 3l4 4-4 4"
+                stroke="#000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="burger" id="burger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hero-dots"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
+      <div class="hero-grid">
+        <div class="hero-left" id="hero-left">
+          <div class="hero-eyebrow" id="hero-eyebrow">
+            <span class="eyebrow-dot"></span>
+            Elite IT Support &amp; Digital Infrastructure
+          </div>
+          <h1 class="hero-h1" id="hero-h1">
+            Elite<br />Technology.<br /><em>Engineered</em><br />for You.
+          </h1>
+          <p class="hero-sub" id="hero-sub">
+            Genelli Tech delivers enterprise-grade IT support, cloud
+            infrastructure and intelligent automation — transforming your
+            business technology into a lasting competitive advantage.
+          </p>
+          <div class="hero-ctas" id="hero-ctas">
+            <a href="#contact" class="btn-primary"
+              >Start a Project
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M2 7h10M8 3l4 4-4 4"
+                  stroke="#000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+            <a href="#portfolio" class="btn-secondary"
+              >View Work
+              <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M7 2l5 5-5 5M2 7h10"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="hero-stats" id="hero-stats">
+            <div class="hst">
+              <span class="hst-n" data-target="8">0</span
+              ><span class="hst-n-suf">+</span>
+              <div class="hst-l">Years Experience</div>
+            </div>
+            <div class="hst">
+              <span class="hst-n" data-target="200">0</span
+              ><span class="hst-n-suf">+</span>
+              <div class="hst-l">Projects Delivered</div>
+            </div>
+            <div class="hst">
+              <span class="hst-n" data-target="98">0</span
+              ><span class="hst-n-suf">%</span>
+              <div class="hst-l">Client Retention</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right" id="hero-right">
+          <canvas id="three-canvas"></canvas>
+          <div class="float-chip chip-a">
+            <span class="chip-val">6+</span
+            ><span class="chip-lbl">Services</span>
+          </div>
+          <div class="float-chip chip-b">
+            <span class="chip-val">24/7</span
+            ><span class="chip-lbl">Support</span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint" id="scroll-hint">
+        <div class="scroll-line"></div>
+        <span class="scroll-text">Scroll</span>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marq-wrap">
+      <div class="marq-track">
+        <span class="marq-item"><span class="marq-sep"></span>IT Support</span>
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Cyber Security</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Cloud &amp; Azure</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Web Development</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>App Development</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Bespoke Software</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>AWS &amp; GCP</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Disaster Recovery</span
+        >
+        <span class="marq-item"><span class="marq-sep"></span>Automation</span>
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Managed Services</span
+        >
+        <span class="marq-item"><span class="marq-sep"></span>IT Support</span>
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Cyber Security</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Cloud &amp; Azure</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Web Development</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>App Development</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Bespoke Software</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>AWS &amp; GCP</span
+        >
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Disaster Recovery</span
+        >
+        <span class="marq-item"><span class="marq-sep"></span>Automation</span>
+        <span class="marq-item"
+          ><span class="marq-sep"></span>Managed Services</span
+        >
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <div id="services">
+      <div class="svc-header sa">
+        <div class="tag">What We Do</div>
+        <h2 class="s-title">Our <em>Core</em> Services</h2>
+        <p class="s-sub">
+          End-to-end technology solutions across IT support, cloud, security,
+          web, mobile and data platforms.
+        </p>
+      </div>
+      <div class="svc-track-outer">
+        <div class="svc-track" id="svc-track">
+          <div class="svc-slide">
+            <span class="svc-slide-num">01</span>
+            <div class="svc-icon-box si-a">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="1" />
+                <path d="M8 21h8M12 17v4" />
+                <path d="M2 11h20" />
+              </svg>
+            </div>
+            <h3>IT Support &amp; Managed Services</h3>
+            <p>
+              Round-the-clock monitoring, helpdesk support, network management
+              and infrastructure planning — so your team stays productive.
+            </p>
+          </div>
+          <div class="svc-slide">
+            <span class="svc-slide-num">02</span>
+            <div class="svc-icon-box si-b">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path
+                  d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"
+                />
+              </svg>
+            </div>
+            <h3>Web Design &amp; Development</h3>
+            <p>
+              High-converting websites and eCommerce stores with pixel-perfect
+              design and SEO best-practices baked in from day one.
+            </p>
+          </div>
+          <div class="svc-slide">
+            <span class="svc-slide-num">03</span>
+            <div class="svc-icon-box si-c">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <path d="M9 6h6M12 18h.01" />
+              </svg>
+            </div>
+            <h3>Mobile App Development</h3>
+            <p>
+              Native and cross-platform iOS &amp; Android apps — from MVP
+              concept to App Store launch — designed to delight users at scale.
+            </p>
+          </div>
+          <div class="svc-slide">
+            <span class="svc-slide-num">04</span>
+            <div class="svc-icon-box si-a">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <h3>Bespoke Software</h3>
+            <p>
+              Custom CRMs, dashboards, automation tools and internal platforms
+              built precisely to your workflow — eliminating off-the-shelf
+              compromise.
+            </p>
+          </div>
+          <div class="svc-slide">
+            <span class="svc-slide-num">05</span>
+            <div class="svc-icon-box si-b">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M12 2L3 7v5c0 6 4.5 10 9 11 4.5-1 9-5 9-11V7L12 2z" />
+                <path d="M9 12l2 2 4-4" />
+              </svg>
+            </div>
+            <h3>Cyber Security</h3>
+            <p>
+              Penetration testing, security audits, endpoint protection and
+              staff training — protecting your data and reputation around the
+              clock.
+            </p>
+          </div>
+          <div class="svc-slide">
+            <span class="svc-slide-num">06</span>
+            <div class="svc-icon-box si-c">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z" />
+              </svg>
+            </div>
+            <h3>Cloud &amp; Infrastructure</h3>
+            <p>
+              Azure, AWS and Google Cloud migrations, disaster recovery and
+              scalable architecture that grows effortlessly with your business.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-visual sa fl">
+            <div class="tilt-card" id="tilt-card">
+              <img
+                src="assets/images/about.jpg"
+                alt="Genelli Tech"
+                id="about-img"
+                onerror="
+                  this.src =
+                    'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22600%22 height=%22460%22%3E%3Crect width=%22600%22 height=%22460%22 fill=%22%2312100a%22/%3E%3Crect x=%22200%22 y=%22155%22 width=%22200%22 height=%22150%22 fill=%22none%22 stroke=%22%23D4AF37%22 stroke-width=%221%22/%3E%3Crect x=%22210%22 y=%22165%22 width=%22180%22 height=%22130%22 fill=%22none%22 stroke=%22%23D4AF37%22 stroke-width=%220.5%22/%3E%3Cpath d=%22M280 205H240V245H200V165H280V205Z%22 fill=%22none%22 stroke=%22%23D4AF37%22 stroke-width=%221%22/%3E%3Cpath d=%22M240 205H280%22 stroke=%22%23D4AF37%22 stroke-width=%221%22/%3E%3Ctext x=%22300%22 y=%22345%22 text-anchor=%22middle%22 fill=%22%23D4AF37%22 font-size=%2213%22 font-family=%22monospace%22 letter-spacing=%225%22%3EGENELLI TECH%3C/text%3E%3C/svg%3E'
+                "
+              />
+              <div class="tilt-overlay"></div>
+              <div class="tilt-shine" id="tilt-shine"></div>
+            </div>
+            <div class="afl afl-1">
+              <div class="afl-n">200+</div>
+              <div class="afl-l">Clients Worldwide</div>
+            </div>
+            <div class="afl afl-2">
+              <div class="afl-n">8+</div>
+              <div class="afl-l">Years in IT</div>
+            </div>
+          </div>
+          <div class="about-copy sa fr d2">
+            <div class="tag">Who We Are</div>
+            <h2 class="s-title">
+              We think like <em>Partners,</em> not Vendors
+            </h2>
+            <p style="font-size: 15.5px">
+              Genelli Tech is an enterprise-grade IT and digital services firm
+              based in the United Kingdom. We combine deep technical expertise
+              with strategic thinking to build solutions that solve real
+              problems and grow with your business.
+            </p>
+            <p>
+              From SMBs to large enterprises, we tailor every engagement to your
+              unique goals — on time, on budget, built to last. No cookie-cutter
+              fixes, no reactive support — only proactive, purposeful
+              technology.
+            </p>
+            <div class="stat-chips">
+              <div class="stat-chip">
+                <div class="chip-n" data-val="200">0</div>
+                <div class="chip-l">Clients</div>
+              </div>
+              <div class="stat-chip">
+                <div class="chip-n" data-val="98">0</div>
+                <div class="chip-l">Retention %</div>
+              </div>
+              <div class="stat-chip">
+                <div class="chip-n" data-val="6">0</div>
+                <div class="chip-l">Services</div>
+              </div>
+            </div>
+            <div style="margin-top: 32px">
+              <a href="#contact" class="btn-grad"
+                >Start a Project
+                <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+                  <path
+                    d="M2 7h10M8 3l4 4-4 4"
+                    stroke="#000"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="center sa">
+          <div class="tag">Our Work</div>
+          <h2 class="s-title">Recent <em>Projects</em> &amp; Case Studies</h2>
+          <p class="s-sub">
+            A selection of work across industries — from IT infrastructure to
+            bespoke software and digital transformation.
+          </p>
+        </div>
+        <div class="port-grid">
+          <div class="port-item p1 pb1">
+            <img
+              src="assets/images/project1.webp"
+              alt="MedCore"
+              class="port-img"
+              onerror="
+                this.style.background =
+                  'linear-gradient(140deg,#1a1205,#0e0a03)';
+                this.style.display = 'block';
+                this.style.minHeight = '100%';
+              "
+            />
+            <div class="port-ov">
+              <h4>MedCore Group</h4>
+              <span>IT Infrastructure Rebuild</span>
+            </div>
+            <div class="port-arr">↗</div>
+            <div class="port-num">01</div>
+          </div>
+          <div class="port-item p2 pb2">
+            <img
+              src="assets/images/project2.webp"
+              alt="Okafor Legal"
+              class="port-img"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="port-ov">
+              <h4>Okafor Legal LLP</h4>
+              <span>Web Design &amp; SEO</span>
+            </div>
+            <div class="port-arr">↗</div>
+            <div class="port-num">02</div>
+          </div>
+          <div class="port-item p3 pb3">
+            <img
+              src="assets/images/project3.webp"
+              alt="Vantage"
+              class="port-img"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="port-ov">
+              <h4>Vantage Distribution</h4>
+              <span>Stock Management App</span>
+            </div>
+            <div class="port-arr">↗</div>
+            <div class="port-num">03</div>
+          </div>
+          <div class="port-item p4 pb4">
+            <img
+              src="assets/images/project4.webp"
+              alt="CloudShield"
+              class="port-img"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="port-ov">
+              <h4>CloudShield Finance</h4>
+              <span>Cyber Security Audit</span>
+            </div>
+            <div class="port-arr">↗</div>
+            <div class="port-num">04</div>
+          </div>
+          <div class="port-item p5 pb5">
+            <img
+              src="assets/images/project5.webp"
+              alt="Nexus"
+              class="port-img"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="port-ov">
+              <h4>Nexus Property Group</h4>
+              <span>Cloud Migration &amp; Azure</span>
+            </div>
+            <div class="port-arr">↗</div>
+            <div class="port-num">05</div>
+          </div>
+          <div class="port-item p6 pb6">
+            <img
+              src="assets/images/project6.webp"
+              alt="Swift Clinic"
+              class="port-img"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="port-ov">
+              <h4>Swift Clinic</h4>
+              <span>Patient Portal &amp; Mobile App</span>
+            </div>
+            <div class="port-arr">↗</div>
+            <div class="port-num">06</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="section" style="background: var(--bg2)">
+      <div class="container">
+        <div class="center sa">
+          <div class="tag">Our Process</div>
+          <h2 class="s-title">How We <em>Deliver</em> Excellence</h2>
+          <p class="s-sub">
+            A proven 4-step process that keeps you in control from day one to
+            delivery and beyond.
+          </p>
+        </div>
+        <div class="proc-row">
+          <div class="proc-step sa d1">
+            <div class="proc-num">01</div>
+            <h4>Discovery &amp; Planning</h4>
+            <p>
+              We deep-dive into your goals, infrastructure and timeline to craft
+              a precise project roadmap.
+            </p>
+          </div>
+          <div class="proc-step sa d2">
+            <div class="proc-num">02</div>
+            <h4>Design &amp; Strategy</h4>
+            <p>
+              Architecture reviewed and approved before a single line of code or
+              configuration is applied.
+            </p>
+          </div>
+          <div class="proc-step sa d3">
+            <div class="proc-num">03</div>
+            <h4>Build &amp; Test</h4>
+            <p>
+              Agile delivery, rigorous QA and security checks ensure your
+              solution is fast, secure and stable.
+            </p>
+          </div>
+          <div class="proc-step sa d4">
+            <div class="proc-num">04</div>
+            <h4>Launch &amp; Support</h4>
+            <p>
+              We deploy, monitor and maintain so your technology stays healthy
+              and keeps growing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <div class="center sa">
+          <div class="tag">Investment</div>
+          <h2 class="s-title">Transparent <em>Pricing</em> For Every Stage</h2>
+          <p class="s-sub">
+            No surprises. All plans include a dedicated account manager, clean
+            documentation and full IP ownership.
+          </p>
+        </div>
+        <div class="price-grid">
+          <div class="price-card sa d1">
+            <div class="price-type">Essentials</div>
+            <h3>Managed IT Support</h3>
+            <div>
+              <span class="price-cur">£</span
+              ><span class="price-amount">299</span>
+            </div>
+            <div class="price-note">Per month · Up to 10 users</div>
+            <div class="price-div"></div>
+            <ul class="price-list">
+              <li>
+                <span class="chk">✓</span>Remote helpdesk (business hours)
+              </li>
+              <li>
+                <span class="chk">✓</span>Antivirus &amp; patch management
+              </li>
+              <li><span class="chk">✓</span>Email &amp; Office 365 support</li>
+              <li><span class="chk">✓</span>Monthly health report</li>
+              <li><span class="chk">✓</span>30-day onboarding support</li>
+              <li class="off"><span class="xmk">✕</span>24/7 monitoring</li>
+              <li class="off">
+                <span class="xmk">✕</span>Cloud backup &amp; DR
+              </li>
+            </ul>
+            <a href="#contact" class="price-btn pbo">Get Started →</a>
+          </div>
+          <div class="price-card featured sa d2">
+            <div class="price-badge">Most Popular</div>
+            <div class="price-type">Professional</div>
+            <h3>Full IT + Web or App Project</h3>
+            <div>
+              <span class="price-cur">£</span
+              ><span class="price-amount">599</span>
+            </div>
+            <div class="price-note">Per month · Up to 30 users</div>
+            <div class="price-div"></div>
+            <ul class="price-list">
+              <li><span class="chk">✓</span>24/7 remote helpdesk</li>
+              <li><span class="chk">✓</span>Advanced cyber security suite</li>
+              <li><span class="chk">✓</span>Cloud backup &amp; DR planning</li>
+              <li><span class="chk">✓</span>Custom web or mobile app</li>
+              <li><span class="chk">✓</span>Cloud deployment (Azure/AWS)</li>
+              <li><span class="chk">✓</span>Quarterly strategy review</li>
+              <li><span class="chk">✓</span>Priority response SLA</li>
+            </ul>
+            <a href="#contact" class="price-btn pbf">Let's Build It →</a>
+          </div>
+          <div class="price-card sa d3">
+            <div class="price-type">Enterprise</div>
+            <h3>Full Infrastructure &amp; Scale</h3>
+            <div>
+              <span class="price-cur">£</span
+              ><span class="price-amount">999</span>
+            </div>
+            <div class="price-note">Starting from · Custom quote</div>
+            <div class="price-div"></div>
+            <ul class="price-list">
+              <li><span class="chk">✓</span>Unlimited users</li>
+              <li><span class="chk">✓</span>Dedicated on-site engineer</li>
+              <li><span class="chk">✓</span>Full infrastructure management</li>
+              <li>
+                <span class="chk">✓</span>Penetration testing &amp; audits
+              </li>
+              <li><span class="chk">✓</span>vCTO advisory service</li>
+              <li><span class="chk">✓</span>Custom SLA agreements</li>
+              <li><span class="chk">✓</span>6-month retainer option</li>
+            </ul>
+            <a href="#contact" class="price-btn pbo">Request a Quote →</a>
+          </div>
+        </div>
+        <p
+          style="
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 26px;
+            font-weight: 300;
+          "
+        >
+          All prices are starting estimates.
+          <a href="#contact" style="color: var(--gold-l)">Contact us</a> for a
+          free discovery call.
+        </p>
+      </div>
+    </section>
+
+    <!-- HIRE / LINKEDIN -->
+    <section id="hire">
+      <div class="container">
+        <div class="hire-box sa">
+          <h2>Also on <span class="gt">LinkedIn</span></h2>
+          <p>
+            Prefer to verify our credentials before reaching out? Find Genelli
+            Tech on LinkedIn with a verified company profile and client
+            endorsements.
+          </p>
+          <img
+            src="assets/images/avatar.jpg"
+            alt="Genelli Tech"
+            class="hire-avatar"
+            onerror="this.style.display = 'none'"
+          />
+          <div class="hire-name">Genelli Tech</div>
+          <p class="hire-role">
+            Enterprise IT Support &amp; Digital Services — United Kingdom
+          </p>
+          <a
+            href="https://www.linkedin.com/company/genellitech"
+            target="_blank"
+            class="btn-grad"
+            >View LinkedIn Profile ↗</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="sa">
+          <div class="tag">Get in Touch</div>
+          <h2 class="s-title">Let's <em>Build</em> Something Together</h2>
+        </div>
+        <div class="contact-grid">
+          <div class="about-copy sa fl">
+            <p
+              style="
+                display: block;
+                margin-bottom: 28px;
+                font-size: 16px;
+                color: var(--muted2);
+              "
+            >
+              Have a project in mind? Reach out through any channel below or
+              fill the form — we typically respond within 4 hours on business
+              days.
+            </p>
+            <div class="cmethod">
+              <div class="cmethod-icon ci-b">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <div class="cmethod-l">Email</div>
+                <div class="cmethod-v">
+                  <a href="mailto:hello@genellitech.co.uk"
+                    >hello@genellitech.co.uk</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="cmethod">
+              <div class="cmethod-icon ci-a">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <div class="cmethod-l">Phone</div>
+                <div class="cmethod-v">
+                  <a href="tel:+441234567890">+44 (0) 1234 567 890</a>
+                </div>
+              </div>
+            </div>
+            <div class="cmethod">
+              <div class="cmethod-icon ci-c">
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+              </div>
+              <div>
+                <div class="cmethod-l">Location</div>
+                <div class="cmethod-v">United Kingdom</div>
+              </div>
+            </div>
+            <div class="cmap">
+              <iframe
+                src="https://maps.google.com/maps?q=United+Kingdom&t=&z=6&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="210"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div class="cform-wrap sa fr d2">
+            <h3>Send a Message</h3>
+            <p>Tell us about your project and we'll get back with a plan.</p>
+            <form>
+              <div class="frow">
+                <div class="fg">
+                  <label class="flabel">Your Name</label
+                  ><input
+                    type="text"
+                    class="finput"
+                    placeholder="John Smith"
+                    required
+                  />
+                </div>
+                <div class="fg">
+                  <label class="flabel">Email</label
+                  ><input
+                    type="email"
+                    class="finput"
+                    placeholder="john@company.co.uk"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="fg">
+                <label class="flabel">Service Needed</label>
+                <select class="finput" style="cursor: pointer">
+                  <option value="" disabled selected>
+                    Select a service...
+                  </option>
+                  <option>IT Support &amp; Managed Services</option>
+                  <option>Web Design &amp; Development</option>
+                  <option>Mobile App Development</option>
+                  <option>Bespoke Software</option>
+                  <option>Cyber Security</option>
+                  <option>Cloud &amp; Infrastructure</option>
+                  <option>Not sure — I need advice</option>
+                </select>
+              </div>
+              <div class="fg">
+                <label class="flabel">Your Message</label
+                ><textarea
+                  class="finput"
+                  placeholder="Describe your project, goals, timeline and budget..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="fsubmit">▶ Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="foot-grid">
+          <div class="foot-brand">
+            <img
+              src="assets/images/logo.png"
+              alt="Genelli Tech"
+              class="foot-logo"
+              onerror="this.style.display = 'none'"
+            />
+            <p>
+              Enterprise IT support, cloud infrastructure, cyber security and
+              bespoke software development — all under one roof.
+            </p>
+            <div class="foot-social">
+              <a
+                href="https://www.linkedin.com/company/genellitech"
+                class="soc-link"
+                >in</a
+              >
+              <a href="#" class="soc-link">f</a>
+              <a href="mailto:hello@genellitech.co.uk" class="soc-link">✉</a>
+            </div>
+          </div>
+          <div class="foot-col">
+            <h5>Services</h5>
+            <ul>
+              <li><a href="#services">IT Support</a></li>
+              <li><a href="#services">Web Development</a></li>
+              <li><a href="#services">App Development</a></li>
+              <li><a href="#services">Bespoke Software</a></li>
+              <li><a href="#services">Cyber Security</a></li>
+              <li><a href="#services">Cloud &amp; Azure</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#process">How We Work</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="foot-col">
+            <h5>Contact</h5>
+            <ul>
+              <li><a href="tel:+441234567890">+44 (0) 1234 567 890</a></li>
+              <li>
+                <a href="mailto:hello@genellitech.co.uk"
+                  >hello@genellitech.co.uk</a
+                >
+              </li>
+              <li>
+                <a href="mailto:info@genellitech.co.uk"
+                  >info@genellitech.co.uk</a
+                >
+              </li>
+              <li
+                style="color: var(--muted); font-size: 13px; padding-top: 2px"
+              >
+                United Kingdom
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <p>© 2025 Genelli Tech. All Rights Reserved.</p>
+          <p>
+            Built with <span style="color: var(--gold-l)">♥</span> by
+            <a href="#">Genelli Tech</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      /* ─── CURSOR ─── */
+      const $cur = document.getElementById("cursor"),
+        $ring = document.getElementById("cursor-ring");
+      let cX = 0,
+        cY = 0,
+        rX = 0,
+        rY = 0;
+      document.addEventListener(
+        "mousemove",
+        (e) => {
+          cX = e.clientX;
+          cY = e.clientY;
+        },
+        { passive: true },
+      );
+      (function animCur() {
+        rX += (cX - rX) * 0.12;
+        rY += (cY - rY) * 0.12;
+        $cur.style.cssText = `left:${cX}px;top:${cY}px`;
+        $ring.style.cssText = `left:${rX}px;top:${rY}px`;
+        requestAnimationFrame(animCur);
+      })();
+
+      /* ─── THREE.JS HERO ─── */
+      (function initThree() {
+        if (!window.THREE) return;
+        const canvas = document.getElementById("three-canvas");
+        if (!canvas || !canvas.offsetWidth) return;
+        const W = canvas.offsetWidth,
+          H = canvas.offsetHeight;
+        const renderer = new THREE.WebGLRenderer({
+          canvas,
+          alpha: true,
+          antialias: true,
+        });
+        renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+        renderer.setSize(W, H);
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(48, W / H, 0.1, 1000);
+        camera.position.z = 5.2;
+        const G1 = 0xd4af37,
+          G2 = 0xb8960c,
+          G3 = 0xf0c843;
+
+        /* Core octahedron */
+        const coreMesh = new THREE.Mesh(
+          new THREE.OctahedronGeometry(0.55, 2),
+          new THREE.MeshBasicMaterial({
+            color: G1,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.28,
+          }),
+        );
+        scene.add(coreMesh);
+        const innerCore = new THREE.Mesh(
+          new THREE.OctahedronGeometry(0.28, 0),
+          new THREE.MeshBasicMaterial({
+            color: G2,
+            transparent: true,
+            opacity: 0.14,
+          }),
+        );
+        scene.add(innerCore);
+
+        /* Rings */
+        const ringData = [
+          [1.0, G1, 0.5],
+          [0.7, G2, 0.3],
+          [1.3, G3, 0.18],
+        ];
+        const rings = ringData.map(([r, c, o], i) => {
+          const m = new THREE.Mesh(
+            new THREE.TorusGeometry(r, 0.006 + i * 0.002, 8, 80),
+            new THREE.MeshBasicMaterial({
+              color: c,
+              transparent: true,
+              opacity: o,
+            }),
+          );
+          m.rotation.x = (i * Math.PI) / 3.5;
+          m.rotation.y = (i * Math.PI) / 4;
+          scene.add(m);
+          return m;
+        });
+
+        /* Orbiting cubes */
+        const cube1 = new THREE.Mesh(
+          new THREE.BoxGeometry(0.18, 0.18, 0.18),
+          new THREE.MeshBasicMaterial({
+            color: G1,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.5,
+          }),
+        );
+        scene.add(cube1);
+        const cube2 = new THREE.Mesh(
+          new THREE.BoxGeometry(0.12, 0.12, 0.12),
+          new THREE.MeshBasicMaterial({
+            color: G3,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.4,
+          }),
+        );
+        scene.add(cube2);
+
+        /* Floating panels */
+        [
+          [0.6, 0.35, 1.5, 0.4, -0.8, 0.2],
+          [0.45, 0.25, -1.4, -0.3, -0.6, -0.15],
+          [0.5, 0.3, 0.8, -1.1, -0.5, 0.4],
+          [0.35, 0.2, -0.6, 0.9, -0.7, -0.3],
+        ].forEach(([w, h, ox, oy, oz, rz]) => {
+          const g = new THREE.PlaneGeometry(w, h);
+          const m = new THREE.Mesh(
+            g,
+            new THREE.MeshBasicMaterial({
+              color: G2,
+              transparent: true,
+              opacity: 0.06,
+              side: THREE.DoubleSide,
+            }),
+          );
+          m.position.set(ox, oy, oz);
+          m.rotation.z = rz;
+          scene.add(m);
+          const e = new THREE.LineSegments(
+            new THREE.EdgesGeometry(g),
+            new THREE.LineBasicMaterial({
+              color: G1,
+              transparent: true,
+              opacity: 0.28,
+            }),
+          );
+          e.position.copy(m.position);
+          e.rotation.copy(m.rotation);
+          scene.add(e);
+        });
+
+        /* Icosphere */
+        scene.add(
+          new THREE.Mesh(
+            new THREE.IcosahedronGeometry(1.85, 1),
+            new THREE.MeshBasicMaterial({
+              color: G1,
+              wireframe: true,
+              transparent: true,
+              opacity: 0.04,
+            }),
+          ),
+        );
+
+        /* Particles */
+        const N = 1800,
+          pPos = new Float32Array(N * 3);
+        for (let i = 0; i < N; i++) {
+          const phi = Math.acos(-1 + (2 * i) / N),
+            theta = Math.sqrt(N * Math.PI) * phi;
+          const r = 2.0 + Math.random() * 0.6;
+          pPos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+          pPos[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+          pPos[i * 3 + 2] = r * Math.cos(phi);
+        }
+        const pg = new THREE.BufferGeometry();
+        pg.setAttribute("position", new THREE.BufferAttribute(pPos, 3));
+        scene.add(
+          new THREE.Points(
+            pg,
+            new THREE.PointsMaterial({
+              color: G1,
+              size: 0.015,
+              transparent: true,
+              opacity: 0.6,
+              sizeAttenuation: true,
+            }),
+          ),
+        );
+
+        /* Network nodes */
+        const nodePos = [
+          new THREE.Vector3(1.6, 0.8, -0.5),
+          new THREE.Vector3(-1.4, 0.6, -0.4),
+          new THREE.Vector3(0.5, -1.5, -0.3),
+          new THREE.Vector3(-0.8, -1.2, -0.6),
+          new THREE.Vector3(1.2, -0.7, -0.8),
+          new THREE.Vector3(-1.5, -0.4, -0.3),
+          new THREE.Vector3(0.3, 1.7, -0.5),
+        ];
+        const nodeMeshes = nodePos.map((pos) => {
+          const m = new THREE.Mesh(
+            new THREE.SphereGeometry(0.04, 8, 8),
+            new THREE.MeshBasicMaterial({
+              color: G1,
+              transparent: true,
+              opacity: 0.55,
+            }),
+          );
+          m.position.copy(pos);
+          scene.add(m);
+          return m;
+        });
+        [
+          [0, 2],
+          [1, 3],
+          [2, 4],
+          [3, 5],
+          [4, 6],
+          [0, 6],
+          [1, 4],
+        ].forEach(([a, b]) => {
+          scene.add(
+            new THREE.Line(
+              new THREE.BufferGeometry().setFromPoints([
+                nodePos[a],
+                nodePos[b],
+              ]),
+              new THREE.LineBasicMaterial({
+                color: G2,
+                transparent: true,
+                opacity: 0.12,
+              }),
+            ),
+          );
+        });
+
+        /* Pulse rings */
+        const pulseRingMats = [0.6, 0.9, 1.2].map((r) => {
+          const m = new THREE.Mesh(
+            new THREE.TorusGeometry(r, 0.003, 6, 60),
+            new THREE.MeshBasicMaterial({
+              color: G1,
+              transparent: true,
+              opacity: 0,
+            }),
+          );
+          scene.add(m);
+          return m.material;
+        });
+
+        let mx = 0,
+          my = 0,
+          tx = 0,
+          ty = 0,
+          tick = 0,
+          pulseT = 0;
+        document.addEventListener(
+          "mousemove",
+          (e) => {
+            mx = (e.clientX / innerWidth - 0.5) * 2;
+            my = (e.clientY / innerHeight - 0.5) * 2;
+          },
+          { passive: true },
+        );
+
+        (function animate() {
+          requestAnimationFrame(animate);
+          tick += 0.005;
+          pulseT += 0.022;
+          tx += (mx * 0.18 - tx) * 0.045;
+          ty += (my * 0.12 - ty) * 0.045;
+
+          coreMesh.rotation.x = tick * 0.3 + ty * 0.4;
+          coreMesh.rotation.y = tick * 0.5 + tx;
+          coreMesh.rotation.z = tick * 0.15;
+          innerCore.rotation.x = -tick * 0.4;
+          innerCore.rotation.y = tick * 0.6;
+          innerCore.scale.setScalar(1 + 0.1 * Math.sin(tick * 3));
+
+          rings[0].rotation.z = tick * 0.15 + tx * 0.3;
+          rings[0].rotation.x = tick * 0.1 + ty * 0.2;
+          rings[1].rotation.y = tick * 0.25 + tx * 0.4;
+          rings[1].rotation.z = tick * 0.12;
+          rings[2].rotation.x = tick * 0.08 + ty * 0.3;
+          rings[2].rotation.z = tick * 0.2;
+
+          const r1 = 1.4 + 0.1 * Math.sin(tick * 2);
+          cube1.position.x = Math.cos(tick * 0.7) * r1;
+          cube1.position.y = Math.sin(tick * 0.5) * 0.5;
+          cube1.position.z = Math.sin(tick * 0.7) * r1;
+          cube1.rotation.x += 0.02;
+          cube1.rotation.y += 0.03;
+          cube2.position.x = Math.cos(tick * 0.9 + Math.PI) * 1.1;
+          cube2.position.y = Math.sin(tick * 1.1) * 0.7;
+          cube2.position.z = Math.sin(tick * 0.9 + Math.PI) * 1.1;
+          cube2.rotation.z += 0.025;
+
+          pulseRingMats.forEach((m, i) => {
+            const ph = (pulseT + i * 0.8) % (Math.PI * 2);
+            m.opacity = Math.max(
+              0,
+              0.35 * Math.sin(ph) * (1 - ph / (Math.PI * 2)),
+            );
+          });
+          nodeMeshes.forEach((m, i) => {
+            m.material.opacity = 0.4 + 0.25 * Math.sin(tick * 1.5 + i * 0.8);
+          });
+
+          renderer.render(scene, camera);
+        })();
+        window.addEventListener("resize", () => {
+          const W2 = canvas.offsetWidth,
+            H2 = canvas.offsetHeight;
+          if (!W2 || !H2) return;
+          renderer.setSize(W2, H2);
+          camera.aspect = W2 / H2;
+          camera.updateProjectionMatrix();
+        });
+      })();
+
+      /* ─── GSAP ─── */
+      function bootGSAP() {
+        if (!window.gsap) {
+          setTimeout(bootGSAP, 80);
+          return;
+        }
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to("#progress-bar", {
+          width: "100%",
+          ease: "none",
+          scrollTrigger: {
+            trigger: "body",
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 0.35,
+          },
+        });
+
+        ScrollTrigger.create({
+          start: 80,
+          onEnter: () =>
+            document.getElementById("site-header").classList.add("scrolled"),
+          onLeaveBack: () =>
+            document.getElementById("site-header").classList.remove("scrolled"),
+        });
+
+        const loaderTl = gsap.timeline({ onComplete: revealHero });
+        loaderTl
+          .to("#loader-fill", {
+            width: "100%",
+            duration: 1.1,
+            ease: "power3.inOut",
+          })
+          .to(
+            "#loader-count",
+            {
+              textContent: 100,
+              duration: 1.1,
+              snap: { textContent: 1 },
+              ease: "power2.inOut",
+              onUpdate() {
+                document.getElementById("loader-count").textContent =
+                  Math.round(+this.targets()[0].textContent) + "%";
+              },
+            },
+            "<",
+          )
+          .to("#loader", {
+            yPercent: -100,
+            duration: 0.85,
+            ease: "power4.inOut",
+            delay: 0.18,
+          })
+          .to("#site-header", { opacity: 1, duration: 0.5 }, "-=.3");
+
+        function revealHero() {
+          gsap
+            .timeline()
+            .to("#hero-eyebrow", {
+              opacity: 1,
+              y: 0,
+              duration: 0.7,
+              ease: "power3.out",
+            })
+            .to(
+              "#hero-h1",
+              {
+                opacity: 1,
+                clipPath: "inset(0 0 0% 0)",
+                duration: 0.9,
+                ease: "power4.out",
+              },
+              "-=.35",
+            )
+            .to(
+              "#hero-sub",
+              { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
+              "-=.45",
+            )
+            .to(
+              "#hero-ctas",
+              { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" },
+              "-=.4",
+            )
+            .to(
+              "#hero-stats",
+              { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" },
+              "-=.35",
+            )
+            .to(
+              "#hero-right",
+              { opacity: 1, duration: 0.9, ease: "power3.out" },
+              "-=.8",
+            )
+            .to("#scroll-hint", { opacity: 1, duration: 0.6 }, "-=.2");
+          setTimeout(runCounters, 800);
+        }
+
+        gsap.to("#hero-left", {
+          yPercent: -12,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1,
+          },
+        });
+        gsap.to("#hero-right", {
+          yPercent: -6,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: 1.4,
+          },
+        });
+        gsap.to(".glow-1", {
+          yPercent: 20,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#hero",
+            start: "top top",
+            end: "bottom top",
+            scrub: 2,
+          },
+        });
+
+        /* Services pinned horizontal */
+        const svcTrack = document.getElementById("svc-track");
+        if (svcTrack) {
+          const dist = svcTrack.scrollWidth - window.innerWidth + 120;
+          if (dist > 0)
+            gsap.to(svcTrack, {
+              x: -dist,
+              ease: "none",
+              scrollTrigger: {
+                trigger: "#services",
+                start: "top top",
+                end: `+=${dist}`,
+                scrub: 1,
+                pin: true,
+                anticipatePin: 1,
+              },
+            });
+        }
+
+        gsap.utils.toArray(".sa").forEach((el) => {
+          gsap.fromTo(
+            el,
+            { opacity: 0, y: 36 },
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.8,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 88%",
+                toggleActions: "play none none reverse",
+              },
+            },
+          );
+        });
+
+        gsap.utils.toArray(".port-item").forEach((el, i) => {
+          gsap.fromTo(
+            el,
+            { opacity: 0, y: 28, scale: 0.97 },
+            {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              duration: 0.65,
+              delay: i * 0.04,
+              ease: "power3.out",
+              scrollTrigger: {
+                trigger: el,
+                start: "top 90%",
+                toggleActions: "play none none reverse",
+              },
+            },
+          );
+        });
+      }
+      bootGSAP();
+
+      /* ─── COUNTERS ─── */
+      function runCounters() {
+        document.querySelectorAll("[data-target],[data-val]").forEach((el) => {
+          const v = parseInt(el.dataset.target || el.dataset.val);
+          if (isNaN(v)) return;
+          const dur = 1400;
+          let s = null;
+          (function step(ts) {
+            if (!s) s = ts;
+            const p = Math.min((ts - s) / dur, 1),
+              e = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.floor(e * v);
+            if (p < 1) requestAnimationFrame(step);
+            else el.textContent = v;
+          })(performance.now());
+        });
+      }
+      function runCounterOne(el, v) {
+        if (el._counted) return;
+        el._counted = true;
+        const dur = 1400;
+        let s = null;
+        (function step(ts) {
+          if (!s) s = ts;
+          const p = Math.min((ts - s) / dur, 1),
+            e = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(e * v);
+          if (p < 1) requestAnimationFrame(step);
+          else el.textContent = v;
+        })(performance.now());
+      }
+      document.querySelectorAll("[data-val]").forEach((el) => {
+        new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting)
+                runCounterOne(e.target, parseInt(e.target.dataset.val || 0));
+            });
+          },
+          { threshold: 0.5 },
+        ).observe(el);
+      });
+
+      /* ─── HEADER FALLBACK ─── */
+      const hdr = document.getElementById("site-header");
+      window.addEventListener(
+        "scroll",
+        () => hdr.classList.toggle("scrolled", scrollY > 60),
+        { passive: true },
+      );
+
+      /* ─── BURGER ─── */
+      const burger = document.getElementById("burger"),
+        mnav = document.getElementById("main-nav");
+      burger.addEventListener("click", () => {
+        burger.classList.toggle("open");
+        mnav.classList.toggle("open");
+      });
+      mnav.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => {
+          burger.classList.remove("open");
+          mnav.classList.remove("open");
+        }),
+      );
+
+      /* ─── SMOOTH SCROLL ─── */
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const t = document.querySelector(a.getAttribute("href"));
+          if (t) {
+            e.preventDefault();
+            scrollTo({ top: t.offsetTop - 72, behavior: "smooth" });
+          }
+        });
+      });
+
+      /* ─── ACTIVE NAV ─── */
+      document
+        .querySelectorAll('section[id],div[id="services"]')
+        .forEach((s) => {
+          new IntersectionObserver(
+            (entries) => {
+              entries.forEach((e) => {
+                if (e.isIntersecting) {
+                  document
+                    .querySelectorAll(".main-nav a")
+                    .forEach((a) => a.classList.remove("active"));
+                  const act = document.querySelector(
+                    `.main-nav a[href="#${s.id}"]`,
+                  );
+                  if (act) act.classList.add("active");
+                }
+              });
+            },
+            { threshold: 0.3, rootMargin: "-72px 0px 0px 0px" },
+          ).observe(s);
+        });
+
+      /* ─── 3D TILT ─── */
+      const tiltCard = document.getElementById("tilt-card"),
+        tiltShine = document.getElementById("tilt-shine");
+      if (tiltCard) {
+        tiltCard.addEventListener("mousemove", (e) => {
+          const r = tiltCard.getBoundingClientRect(),
+            x = (e.clientX - r.left) / r.width - 0.5,
+            y = (e.clientY - r.top) / r.height - 0.5;
+          tiltCard.style.transform = `perspective(900px) rotateY(${x * 16}deg) rotateX(${-y * 11}deg) scale(1.025)`;
+          tiltShine.style.background = `radial-gradient(circle at ${(x + 0.5) * 100}% ${(y + 0.5) * 100}%,rgba(255,255,255,.08),transparent 60%)`;
+        });
+        tiltCard.addEventListener("mouseleave", () => {
+          tiltCard.style.transform =
+            "perspective(900px) rotateY(0) rotateX(0) scale(1)";
+          tiltShine.style.background =
+            "radial-gradient(circle at 30% 30%,rgba(255,255,255,.05),transparent 60%)";
+        });
+      }
+
+      /* ─── MAGNETIC BUTTONS ─── */
+      document
+        .querySelectorAll(".btn-primary,.btn-secondary,.btn-grad,.nav-cta a")
+        .forEach((btn) => {
+          btn.addEventListener("mousemove", (e) => {
+            if (!window.gsap) return;
+            const r = btn.getBoundingClientRect();
+            gsap.to(btn, {
+              x: (e.clientX - r.left - r.width / 2) * 0.3,
+              y: (e.clientY - r.top - r.height / 2) * 0.3,
+              duration: 0.3,
+              ease: "power2.out",
+            });
+          });
+          btn.addEventListener("mouseleave", () => {
+            if (!window.gsap) return;
+            gsap.to(btn, {
+              x: 0,
+              y: 0,
+              duration: 0.55,
+              ease: "elastic.out(1,.4)",
+            });
+          });
+        });
+
+      /* ─── SCROLL REVEAL FALLBACK ─── */
+      document.querySelectorAll(".sa").forEach((el) => {
+        new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) e.target.classList.add("in");
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -48px 0px" },
+        ).observe(el);
+      });
+
+      /* ─── FORM TOAST ─── */
+      const urlP = new URLSearchParams(location.search);
+      if (urlP.get("success") || urlP.get("error")) {
+        const ok = !!urlP.get("success"),
+          toast = document.createElement("div");
+        toast.className = "toast-msg " + (ok ? "tok" : "terr");
+        toast.textContent = ok
+          ? "✓ Message sent! We'll be in touch soon."
+          : "✗ Something went wrong. Please try again.";
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 5500);
+      }
+    </script>
+  </body>
+</html>
