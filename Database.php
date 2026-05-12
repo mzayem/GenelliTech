@@ -34,9 +34,9 @@ if (
 
 // Database credentials
 $host = "localhost";
-$username = "u563786655_tech";
-$password = "Techstersol789@";
-$dbname = "u563786655_tech";
+$username = "u414369606_genelli_tech";
+$password = "G1e@n3e4l5l6i7";
+$dbname = "u414369606_genelli_tech";
 
 // Connect DB
 $con = new mysqli($host, $username, $password, $dbname);
