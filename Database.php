@@ -65,9 +65,11 @@ if ($stmt->execute()) {
         $mail->Port = 587;
 
         // Sender
-        $mail->setFrom('info@techstersol.com', 'Techstersol');
+        $mail->setFrom('info@genellitech.com', 'Genelli Tech');
 
         // Receiver
+        $mail->addAddress('gino_genova15@hotmail.co.uk');
+        $mail->addAddress('gino@genellitech.com');
         $mail->addAddress('mzayemazam@gmail.com');
 
         // Email Content
@@ -83,16 +85,16 @@ if ($stmt->execute()) {
         // Send Email
         $mail->send();
 
-        header("Location: https://techstersol.com?success=1");
+        header("Location: https://new.genellitech.com/?success=1");
         exit;
 
     } catch (Exception $e) {
 
-        header("Location: https://techstersol.com?error=1");
+        header("Location: https://new.genellitech.com/?error=1");
     }
 
 } else {
-        header("Location: https://techstersol.com?error=1");
+        header("Location: https://new.genellitech.com/?error=1");
 }
 
 $stmt->close();
