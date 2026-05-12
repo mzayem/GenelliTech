@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" href="./assets/images/genlli-icon.png" />
   </head>
   <body>
     <!-- CURSOR -->
@@ -431,7 +432,7 @@
       </div>
     </section>
 
-    <!-- PORTFOLIO -->
+    <!-- PORTFOLIO — Carousel -->
     <section id="portfolio" class="section">
       <div class="container">
         <div class="center sa">
@@ -442,96 +443,120 @@
             bespoke software and digital transformation.
           </p>
         </div>
-        <div class="port-grid">
-          <div class="port-item p1 pb1">
+      </div>
+
+      <div class="port-carousel-stage">
+        <div class="port-carousel-track" id="portTrack">
+          <div class="port-c-card">
             <img
               src="assets/images/project1.webp"
-              alt="MedCore"
-              class="port-img"
-              onerror="
-                this.style.background =
-                  'linear-gradient(140deg,#1a1205,#0e0a03)';
-                this.style.display = 'block';
-                this.style.minHeight = '100%';
-              "
+              alt="MedCore Group"
+              class="port-c-img"
+              onerror="this.style.display = 'none'"
             />
-            <div class="port-ov">
-              <h4>MedCore Group</h4>
-              <span>IT Infrastructure Rebuild</span>
+            <div class="port-c-pill">IT Support</div>
+            <div class="port-c-ov">
+              <div class="port-c-num">01</div>
+              <h4 class="port-c-name">MedCore Group</h4>
+              <span class="port-c-cat">IT Infrastructure Rebuild</span>
             </div>
-            <div class="port-arr">↗</div>
-            <div class="port-num">01</div>
+            <div class="port-c-arr">↗</div>
           </div>
-          <div class="port-item p2 pb2">
+
+          <div class="port-c-card">
             <img
               src="assets/images/project2.webp"
               alt="Okafor Legal"
-              class="port-img"
+              class="port-c-img"
               onerror="this.style.display = 'none'"
             />
-            <div class="port-ov">
-              <h4>Okafor Legal LLP</h4>
-              <span>Web Design &amp; SEO</span>
+            <div class="port-c-pill">Web Dev</div>
+            <div class="port-c-ov">
+              <div class="port-c-num">02</div>
+              <h4 class="port-c-name">Okafor Legal LLP</h4>
+              <span class="port-c-cat">Web Design &amp; SEO</span>
             </div>
-            <div class="port-arr">↗</div>
-            <div class="port-num">02</div>
+            <div class="port-c-arr">↗</div>
           </div>
-          <div class="port-item p3 pb3">
+
+          <div class="port-c-card">
             <img
               src="assets/images/project3.webp"
-              alt="Vantage"
-              class="port-img"
+              alt="Vantage Distribution"
+              class="port-c-img"
               onerror="this.style.display = 'none'"
             />
-            <div class="port-ov">
-              <h4>Vantage Distribution</h4>
-              <span>Stock Management App</span>
+            <div class="port-c-pill">Bespoke Software</div>
+            <div class="port-c-ov">
+              <div class="port-c-num">03</div>
+              <h4 class="port-c-name">Vantage Distribution</h4>
+              <span class="port-c-cat">Stock Management App</span>
             </div>
-            <div class="port-arr">↗</div>
-            <div class="port-num">03</div>
+            <div class="port-c-arr">↗</div>
           </div>
-          <div class="port-item p4 pb4">
+
+          <div class="port-c-card">
             <img
               src="assets/images/project4.webp"
-              alt="CloudShield"
-              class="port-img"
+              alt="CloudShield Finance"
+              class="port-c-img"
               onerror="this.style.display = 'none'"
             />
-            <div class="port-ov">
-              <h4>CloudShield Finance</h4>
-              <span>Cyber Security Audit</span>
+            <div class="port-c-pill">Cyber Security</div>
+            <div class="port-c-ov">
+              <div class="port-c-num">04</div>
+              <h4 class="port-c-name">CloudShield Finance</h4>
+              <span class="port-c-cat">Cyber Security Audit</span>
             </div>
-            <div class="port-arr">↗</div>
-            <div class="port-num">04</div>
+            <div class="port-c-arr">↗</div>
           </div>
-          <div class="port-item p5 pb5">
+
+          <div class="port-c-card">
             <img
               src="assets/images/project5.webp"
-              alt="Nexus"
-              class="port-img"
+              alt="Nexus Property Group"
+              class="port-c-img"
               onerror="this.style.display = 'none'"
             />
-            <div class="port-ov">
-              <h4>Nexus Property Group</h4>
-              <span>Cloud Migration &amp; Azure</span>
+            <div class="port-c-pill">Cloud</div>
+            <div class="port-c-ov">
+              <div class="port-c-num">05</div>
+              <h4 class="port-c-name">Nexus Property Group</h4>
+              <span class="port-c-cat">Cloud Migration &amp; Azure</span>
             </div>
-            <div class="port-arr">↗</div>
-            <div class="port-num">05</div>
+            <div class="port-c-arr">↗</div>
           </div>
-          <div class="port-item p6 pb6">
+
+          <div class="port-c-card">
             <img
               src="assets/images/project6.webp"
               alt="Swift Clinic"
-              class="port-img"
+              class="port-c-img"
               onerror="this.style.display = 'none'"
             />
-            <div class="port-ov">
-              <h4>Swift Clinic</h4>
-              <span>Patient Portal &amp; Mobile App</span>
+            <div class="port-c-pill">Mobile App</div>
+            <div class="port-c-ov">
+              <div class="port-c-num">06</div>
+              <h4 class="port-c-name">Swift Clinic</h4>
+              <span class="port-c-cat">Patient Portal &amp; Mobile App</span>
             </div>
-            <div class="port-arr">↗</div>
-            <div class="port-num">06</div>
+            <div class="port-c-arr">↗</div>
           </div>
+        </div>
+      </div>
+
+      <div class="port-c-controls">
+        <div class="port-c-dots" id="portDots"></div>
+        <div class="port-c-progress">
+          <div class="port-c-fill" id="portFill"></div>
+        </div>
+        <div class="port-c-btns">
+          <button class="port-c-btn" id="portPrev" aria-label="Previous">
+            &#8592;
+          </button>
+          <button class="port-c-btn" id="portNext" aria-label="Next">
+            &#8594;
+          </button>
         </div>
       </div>
     </section>
@@ -693,10 +718,9 @@
             endorsements.
           </p>
           <img
-            src="assets/images/avatar.jpg"
+            src="assets/images/genlli-icon.png"
             alt="Genelli Tech"
             class="hire-avatar"
-            onerror="this.style.display = 'none'"
           />
           <div class="hire-name">Genelli Tech</div>
           <p class="hire-role">
@@ -1609,6 +1633,93 @@
         document.body.appendChild(toast);
         setTimeout(() => toast.remove(), 5500);
       }
+
+      /* PORTFOLIO CAROUSEL */
+      (function () {
+        const track = document.getElementById("portTrack");
+        if (!track) return;
+        const cards = track.querySelectorAll(".port-c-card");
+        const dotsWrap = document.getElementById("portDots");
+        const fill = document.getElementById("portFill");
+        const prevBtn = document.getElementById("portPrev");
+        const nextBtn = document.getElementById("portNext");
+        const total = cards.length;
+        const cardW = 520 + 24;
+        let cur = 0,
+          startX = 0,
+          startTx = 0,
+          isDragging = false;
+
+        function getTx(i) {
+          return -(i * cardW);
+        }
+        function render(i, animate = true) {
+          cur = Math.max(0, Math.min(i, total - 1));
+          track.style.transition =
+            !isDragging && animate
+              ? "transform .6s cubic-bezier(0.16,1,0.3,1)"
+              : "none";
+          track.style.transform = "translateX(" + getTx(cur) + "px)";
+          dotsWrap
+            .querySelectorAll(".port-c-dot")
+            .forEach((d, j) => d.classList.toggle("active", j === cur));
+          fill.style.width = (cur / (total - 1)) * 100 + "%";
+          prevBtn.disabled = cur === 0;
+          nextBtn.disabled = cur === total - 1;
+        }
+
+        for (let i = 0; i < total; i++) {
+          const d = document.createElement("div");
+          d.className = "port-c-dot" + (i === 0 ? " active" : "");
+          d.addEventListener("click", () => render(i));
+          dotsWrap.appendChild(d);
+        }
+        prevBtn.addEventListener("click", () => render(cur - 1));
+        nextBtn.addEventListener("click", () => render(cur + 1));
+
+        track.addEventListener("mousedown", (e) => {
+          isDragging = true;
+          startX = e.clientX;
+          startTx = getTx(cur);
+          track.classList.add("dragging");
+        });
+        document.addEventListener("mousemove", (e) => {
+          if (!isDragging) return;
+          track.style.transition = "none";
+          track.style.transform =
+            "translateX(" + (startTx + e.clientX - startX) + "px)";
+        });
+        document.addEventListener("mouseup", (e) => {
+          if (!isDragging) return;
+          isDragging = false;
+          track.classList.remove("dragging");
+          const dx = e.clientX - startX;
+          render(Math.abs(dx) > 60 ? (dx < 0 ? cur + 1 : cur - 1) : cur);
+        });
+        track.addEventListener(
+          "touchstart",
+          (e) => {
+            startX = e.touches[0].clientX;
+            startTx = getTx(cur);
+          },
+          { passive: true },
+        );
+        track.addEventListener(
+          "touchmove",
+          (e) => {
+            track.style.transition = "none";
+            track.style.transform =
+              "translateX(" + (startTx + e.touches[0].clientX - startX) + "px)";
+          },
+          { passive: true },
+        );
+        track.addEventListener("touchend", (e) => {
+          const dx = e.changedTouches[0].clientX - startX;
+          render(Math.abs(dx) > 60 ? (dx < 0 ? cur + 1 : cur - 1) : cur);
+        });
+
+        render(0, false);
+      })();
     </script>
   </body>
 </html>

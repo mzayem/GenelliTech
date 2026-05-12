@@ -1150,167 +1150,203 @@ nav.main-nav a.active {
 #portfolio {
   background: var(--bg2);
 }
-.port-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: 180px;
-  gap: 12px;
-  margin-top: 56px;
-}
-.port-item {
-  position: relative;
-  border-radius: 18px;
+/* PORTFOLIO CAROUSEL */
+.port-carousel-stage {
   overflow: hidden;
-  background: var(--surface);
+  padding: 56px 0 0;
+}
+.port-carousel-track {
+  display: flex;
+  gap: 24px;
+  padding: 20px 0 20px 60px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  cursor: grab;
+}
+.port-carousel-track.dragging {
+  transition: none;
+  cursor: grabbing;
+}
+
+.port-c-card {
+  flex: 0 0 520px;
+  height: 360px;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--border);
-  cursor: pointer;
+  background: var(--surface);
+  transition:
+    border-color 0.4s,
+    transform 0.4s;
 }
-.p1 {
-  grid-column: span 8;
-  grid-row: span 2;
+.port-c-card:hover {
+  border-color: rgba(212, 175, 55, 0.35);
+  transform: translateY(-4px);
 }
-.p2,
-.p3 {
-  grid-column: span 4;
-}
-.p4,
-.p5,
-.p6 {
-  grid-column: span 4;
-}
-.pb1 {
-  background: linear-gradient(140deg, #1a1205, #0e0a03);
-}
-.pb2 {
-  background: linear-gradient(140deg, #08100a, #040804);
-}
-.pb3 {
-  background: linear-gradient(140deg, #120e02, #0c0a02);
-}
-.pb4 {
-  background: linear-gradient(140deg, #0a0e12, #040810);
-}
-.pb5 {
-  background: linear-gradient(140deg, #100804, #0c0503);
-}
-.pb6 {
-  background: linear-gradient(140deg, #0e0e14, #080910);
-}
-.port-img {
+.port-c-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  filter: brightness(0.65) saturate(0.7);
   transition:
-    transform 0.65s var(--ease),
-    filter 0.45s;
-  filter: brightness(0.75) saturate(0.7);
+    filter 0.5s,
+    transform 0.5s;
   object-position: top;
 }
-.port-item:hover .port-img {
-  transform: scale(1.07);
-  filter: brightness(0.4) saturate(1.1);
+.port-c-card:hover .port-c-img {
+  filter: brightness(0.4) saturate(1);
+  transform: scale(1.04);
 }
-.port-ov {
+.port-c-pill {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: rgba(8, 8, 10, 0.82);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 100px;
+  padding: 4px 14px;
+  font-size: 10px;
+  font-family: var(--mono);
+  color: var(--gold-l);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.port-c-ov {
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(8, 8, 10, 0.96) 0%,
-    rgba(8, 8, 10, 0.1) 55%,
+    rgba(8, 8, 10, 0.97) 0%,
+    rgba(8, 8, 10, 0.15) 55%,
     transparent 100%
   );
-  opacity: 0;
-  transition: opacity 0.38s;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 22px;
+  padding: 26px 26px 26px;
 }
-.port-item:hover .port-ov {
-  opacity: 1;
+.port-c-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.18);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
 }
-.port-ov h4 {
-  font-size: 16px;
-  font-weight: 700;
+.port-c-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
   color: #fff;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   letter-spacing: -0.3px;
 }
-.port-ov span {
+.port-c-cat {
   font-size: 11px;
   color: var(--gold-l);
   font-weight: 600;
-  letter-spacing: 0.8px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   font-family: var(--mono);
 }
-.port-arr {
+.port-c-arr {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 34px;
-  height: 34px;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: var(--gold-g);
   display: flex;
   align-items: center;
   justify-content: center;
   color: #000;
-  font-size: 12px;
+  font-size: 13px;
   opacity: 0;
   transform: translateY(-6px) scale(0.8);
   transition:
     opacity 0.3s,
     transform 0.3s;
 }
-.port-item:hover .port-arr {
+.port-c-card:hover .port-c-arr {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-.port-num {
-  position: absolute;
-  bottom: 14px;
-  right: 18px;
-  font-family: var(--mono);
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.15);
-  letter-spacing: 1px;
-  pointer-events: none;
+
+.port-c-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 60px 0;
 }
-@media (max-width: 900px) {
-  .port-grid {
-    grid-template-columns: repeat(6, 1fr);
-    grid-auto-rows: 170px;
-  }
-  .p1 {
-    grid-column: span 6;
-    grid-row: span 1;
-  }
-  .p2,
-  .p3 {
-    grid-column: span 3;
-  }
-  .p4,
-  .p5,
-  .p6 {
-    grid-column: span 2;
-  }
+.port-c-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
-@media (max-width: 560px) {
-  .port-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 160px;
+.port-c-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(212, 175, 55, 0.2);
+  transition: all 0.35s;
+  cursor: pointer;
+}
+.port-c-dot.active {
+  width: 22px;
+  border-radius: 3px;
+  background: var(--gold-l);
+}
+.port-c-progress {
+  flex: 1;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.1);
+  margin: 0 28px;
+  border-radius: 1px;
+}
+.port-c-fill {
+  height: 100%;
+  background: var(--gold-t);
+  border-radius: 1px;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.port-c-btns {
+  display: flex;
+  gap: 10px;
+}
+.port-c-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  background: transparent;
+  color: var(--gold-l);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.port-c-btn:hover {
+  border-color: var(--gold-l);
+  background: rgba(212, 175, 55, 0.06);
+}
+.port-c-btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+@media (max-width: 768px) {
+  .port-c-card {
+    flex: 0 0 320px;
+    height: 280px;
   }
-  .p1 {
-    grid-column: span 2;
+  .port-carousel-track {
+    padding-left: 20px;
   }
-  .p2,
-  .p3,
-  .p4,
-  .p5,
-  .p6 {
-    grid-column: span 1;
+  .port-c-controls {
+    padding: 20px 20px 0;
   }
 }
 
@@ -1605,7 +1641,6 @@ nav.main-nav a.active {
 .hire-avatar {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
   border: 2px solid var(--gold-l);
   margin: 0 auto 13px;
   display: block;
