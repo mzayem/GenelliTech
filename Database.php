@@ -65,12 +65,11 @@ if ($stmt->execute()) {
         $mail->Port = 587;
 
         // Sender
-        $mail->setFrom('info@genellitech.com', 'Genelli Tech');
-
+        $mail->setFrom('info@techstersol.com', 'Genelli Tech');
+        $mail->addReplyTo('gino@genellitech.com', 'Genelli Tech');
         // Receiver
         $mail->addAddress('gino_genova15@hotmail.co.uk');
         $mail->addAddress('gino@genellitech.com');
-        $mail->addAddress('mzayemazam@gmail.com');
 
         // Email Content
         $mail->isHTML(false);
