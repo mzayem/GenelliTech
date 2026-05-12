@@ -14,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="icon" href="./assets/images/genlli-icon.png" />
+    <link rel="stylesheet" href="assets/css/fontawesome.css" />
   </head>
   <body>
     <!-- CURSOR -->
@@ -837,12 +838,13 @@
           <div class="cform-wrap sa fr d2">
             <h3>Send a Message</h3>
             <p>Tell us about your project and we'll get back with a plan.</p>
-            <form>
+            <form action="Database.php" method="post">
               <div class="frow">
                 <div class="fg">
                   <label class="flabel">Your Name</label
                   ><input
                     type="text"
+                    name="name"
                     class="finput"
                     placeholder="John Smith"
                     required
@@ -852,6 +854,7 @@
                   <label class="flabel">Email</label
                   ><input
                     type="email"
+                    name="email"
                     class="finput"
                     placeholder="john@company.co.uk"
                     required
@@ -860,7 +863,7 @@
               </div>
               <div class="fg">
                 <label class="flabel">Service Needed</label>
-                <select class="finput" style="cursor: pointer">
+                <select name="subject" class="finput" style="cursor: pointer">
                   <option value="" disabled selected>
                     Select a service...
                   </option>
@@ -876,12 +879,15 @@
               <div class="fg">
                 <label class="flabel">Your Message</label
                 ><textarea
+                  name="message"
                   class="finput"
                   placeholder="Describe your project, goals, timeline and budget..."
                   required
                 ></textarea>
               </div>
-              <button type="submit" class="fsubmit">▶ Send Message</button>
+              <button type="submit" class="fsubmit">
+                <i class="fa fa-paper-plane"></i> Send Message
+              </button>
             </form>
           </div>
         </div>
