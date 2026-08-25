@@ -66,10 +66,10 @@ if ($stmt->execute()) {
 
         // Sender
         $mail->setFrom('info@techstersol.com', 'Genelli Tech');
-        $mail->addReplyTo('gino@genellitech.com', 'Genelli Tech');
+        $mail->addReplyTo('info@genellitech.com', 'Genelli Tech');
         // Receiver
         $mail->addAddress('gino_genova15@hotmail.co.uk');
-        $mail->addAddress('gino@genellitech.com');
+        $mail->addAddress('info@genellitech.com');
 
         // Email Content
         $mail->isHTML(false);
