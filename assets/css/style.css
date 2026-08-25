@@ -1138,6 +1138,12 @@ nav.main-nav a.active {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+.chip-n-suf {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold-l);
 }
 .chip-l {
   font-size: 12px;
