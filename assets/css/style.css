@@ -1193,7 +1193,7 @@ nav.main-nav a.active {
   transition:
     filter 0.5s,
     transform 0.5s;
-  object-position: top;
+  object-position: center;
 }
 .port-c-card:hover .port-c-img {
   filter: brightness(0.4) saturate(1);
